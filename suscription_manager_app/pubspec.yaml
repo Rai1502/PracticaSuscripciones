@@ -1,0 +1,37 @@
+name: suscription_manager_app
+description: "Suscription Manager"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  riverpod: ^2.6.1
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  dio: ^5.8.0+1
+  go_router: ^14.8.1
+  # Inyección de dependencias
+  get_it: ^7.6.7
+  
+  # Utilidades
+  intl: ^0.19.0
+  logger: ^2.0.2+1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.7
+  freezed: ^2.5.7
+  json_serializable: ^6.2.0
+  mockito: ^5.4.4
+  bloc_test: ^10.0.0
+
+
+flutter:
+  uses-material-design: true
