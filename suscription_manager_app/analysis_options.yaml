@@ -1,1 +1,65 @@
 include: package:flutter_lints/flutter.yaml
+
+#Configuracion de Linter
+linter:
+  rules:
+    #Reglas para estilo y formato
+    - always_declare_return_types    # Requiere declarar tipos de retorno explícitos
+    - avoid_empty_else               # Evita bloques else vacíos
+    - avoid_print                    # Evita usar print(), prefiere logger
+    - camel_case_types              # Nombres de clases en CamelCase
+    - constant_identifier_names     # Nombres de constantes en SCREAMING_CAPS
+    - directives_ordering           # Orden específico para imports
+    - prefer_const_constructors     # Prefiere constructores const cuando sea posible
+    - prefer_final_fields          # Prefiere campos finales cuando no se modifican
+    - prefer_is_not_empty          # Usa isNotEmpty en lugar de length > 0
+    - slash_for_doc_comments       # Usa /// para documentación
+    - unnecessary_brace_in_string_interps  # Evita {} innecesarios en interpolación
+    - unnecessary_getters_setters   # Evita getters/setters innecesarios
+    - unnecessary_new              # Evita new innecesario
+    - unnecessary_statements       # Evita declaraciones innecesarias
+
+    #Reglas de buenas practicas en codigo
+    - avoid_unused_constructor_parameters  # Evita parámetros no usados
+    - await_only_futures                  # Asegura await solo en Futures
+    - cancel_subscriptions              # Asegura cancelar suscripciones
+    - control_flow_in_finally           # Evita control de flujo en finally
+    - empty_catches                     # Evita catch vacíos
+    - empty_constructor_bodies          # Evita constructores vacíos
+    - empty_statements                  # Evita declaraciones vacías
+    - implementation_imports            # Evita imports de implementación
+    - library_names                     # Reglas para nombres de librerías
+    - library_prefixes                  # Reglas para prefijos de librerías
+    - package_api_docs                  # Requiere documentación en APIs públicas
+    - package_names                     # Reglas para nombres de paquetes
+    - package_prefixed_library_names    # Reglas para nombres de librerías con prefijo
+    - test_types_in_equals              # Asegura tipos correctos en equals
+    - throw_in_finally                  # Evita throw en bloques finally
+    - type_init_formals                 # Requiere tipos en parámetros formales
+    - unrelated_type_equality_checks    # Evita comparaciones de tipos no relacionados
+    - valid_regexps                     # Asegura expresiones regulares válidas 
+
+#configuramos el Analyzer
+analyzer:
+  #Vamos a excluir el codigo generado automaticamente
+  # Excluir archivos del análisis
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "lib/generated/**"              
+
+  #Errores que vamos a tratar como warnings
+  errors:
+    # Reglas de análisis estático
+    invalid_annotation_target: ignore
+    missing_required_param: warning
+    missing_return: warning
+    must_be_immutable: warning
+    unnecessary_null_comparison: warning
+    unnecessary_this: warning
+    use_key_in_widget_constructors: warning
+    
+  # Reglas específicas para ciertos archivos
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false

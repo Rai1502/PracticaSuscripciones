@@ -1,0 +1,76 @@
+{
+  "endpoints": {
+    "get_payment_methods": {
+      "path": "/payment-methods",
+      "method": "GET",
+      "response": {
+        "status": 200,
+        "data": {
+          "payment_methods": [
+            {
+              "id": "pm_1",
+              "type": "credit_card",
+              "last_four": "4242",
+              "holder_name": "John Doe",
+              "expiry_date": "12/25",
+              "is_primary": true,
+              "card_type": "visa"
+            },
+            {
+              "id": "pm_2",
+              "type": "credit_card",
+              "last_four": "5555",
+              "holder_name": "John Doe",
+              "expiry_date": "10/24",
+              "is_primary": false,
+              "card_type": "mastercard"
+            }
+          ]
+        }
+      }
+    },
+    "add_payment_method": {
+      "path": "/payment-methods",
+      "method": "POST",
+      "request_body": {
+        "type": "credit_card",
+        "card_number": "4242424242424242",
+        "holder_name": "John Doe",
+        "expiry_date": "12/25",
+        "cvv": "123"
+      },
+      "response": {
+        "status": 201,
+        "data": {
+          "id": "pm_4",
+          "type": "credit_card",
+          "last_four": "3209",
+          "holder_name": "Rai Tapia",
+          "expiry_date": "11/25",
+          "is_primary": false,
+          "card_type": "visa"
+        }
+      }
+    },
+    "set_primary_payment_method": {
+      "path": "/payment-methods/{id}/primary",
+      "method": "PUT",
+      "response": {
+        "status": 200,
+        "data": {
+          "message": "Payment method set as primary successfully"
+        }
+      }
+    },
+    "delete_payment_method": {
+      "path": "/payment-methods/{id}",
+      "method": "DELETE",
+      "response": {
+        "status": 200,
+        "data": {
+          "message": "Payment method deleted successfully"
+        }
+      }
+    }
+  }
+} 

@@ -10,10 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
   riverpod: ^2.6.1
+  flutter_riverpod: ^2.6.1
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
   dio: ^5.8.0+1
   go_router: ^14.8.1
+  rxdart: ^0.28.0
   # Inyección de dependencias
   get_it: ^7.6.7
   
@@ -35,3 +37,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/mocks/
+    - assets/images/
